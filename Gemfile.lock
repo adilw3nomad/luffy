@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    http-2-next (1.0.1)
+    httpx (1.0.2)
+      http-2-next (>= 1.0.1)
+    thor (1.2.2)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  httpx (~> 1.0)
+  thor (~> 1.2)
+
+BUNDLED WITH
+   2.4.10
