@@ -19,10 +19,13 @@ module Luffy
   def fetch_and_store(image_urls)
     image_urls.each_with_index do |url, i|
       puts "fetching image #{url}"
-        
-      File.open("#{i}.jpeg", 'ab') do |file| 
-            response = HTTPX.get(url)
-            file << response.read
+      response = HTTPX.get(url)
+      jpeg_content = response.body.read
+      footer_index = jpeg_content.match(/\xFF\xD9\z/).begin(0)
+      binding.irb
+    
+      File.open("test.jpeg", 'ab') do |file|
+      file << jpeg_content
       end
     end  
   end
